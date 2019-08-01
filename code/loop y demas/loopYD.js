@@ -9,6 +9,8 @@ function loop()
 {
   Dvinci();
   mover();
+
+  salirCamiones();
 }
 
 setInterval(loop,10)

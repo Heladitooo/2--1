@@ -7,6 +7,8 @@ var lienzo = canvas.getContext("2d");
 	var movXp1 = 10;
 	var movYp1 = 10;
 
+
+
 	var movXp2 = 10;
 	var movYp2 = 10;
 	var velocidad = 10;
@@ -52,10 +54,14 @@ var lienzo = canvas.getContext("2d");
 
 		if(movXp1 <= canvas.width-20 && movYp1 <= canvas.height-20 && movXp1 >= 0+10 && movYp1 >= 0+10 )
 		{
-		if(teclasEstado[87]){movYp1-=velocidad;}
-		if(teclasEstado[65]){movXp1-=velocidad;}
-		if(teclasEstado[83]){movYp1+=velocidad;}
-		if(teclasEstado[68]){movXp1+=velocidad;}
+		if(teclasEstado[87]){movYp1-=velocidad;
+			}
+		if(teclasEstado[65]){movXp1-=velocidad;
+			}
+		if(teclasEstado[83]){movYp1+=velocidad;
+		}
+		if(teclasEstado[68]){movXp1+=velocidad;
+			}
 	}else {
 			if(movXp1 >= canvas.width-20){movXp1-=velocidad;}
 			if(movYp1 >= canvas.height-20){movYp1-=velocidad;}

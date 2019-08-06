@@ -19,7 +19,7 @@ var camionY0 = false;
 
 
 var aumentarVelocidadCamiones = 0;
-var velocidadCamiones = 10;
+var velocidadCamiones = 25;
 
 function lolCamiones()
 {
@@ -27,13 +27,13 @@ function lolCamiones()
 	camionPosXY = Math.ceil(Math.random() * canvas.height);
 	var lol = Math.ceil(Math.random() * 6);
 	aumentarVelocidadCamiones += 2;
-	if(aumentarVelocidadCamiones === 40)
+	if(aumentarVelocidadCamiones === 60)
 	{
 		aumentarVelocidadCamiones = 0;
 		velocidadCamiones +=5;
 	}
 
-	console.log(lol)
+
 
 	if(lol == 5)
 	{
@@ -107,7 +107,6 @@ function lolCamiones()
 }
 
 
-
 function salirCamiones()
 {
 
@@ -116,7 +115,6 @@ function salirCamiones()
 		lienzo.fillStyle = "#100f12";
 		lienzo.fillRect(x,y,camionY.ancho,camionY.alto)
 	}
-
 	function dibujarCamionX(x,y)
 	{
 		lienzo.fillStyle = "#100f12";
@@ -199,6 +197,7 @@ if(camionizquierda == true){
 
 
 }
+
 
 
 }

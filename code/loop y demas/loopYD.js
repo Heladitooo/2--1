@@ -1,14 +1,17 @@
+
+var canvas = document.querySelector("#espacio");
+var lienzo = canvas.getContext("2d");
+
 function Dvinci() {
-  canvas.width = document.body.clientWidth;
-  canvas.height = document.body.clientHeight - 40;
   lienzo.clearRect(0, 0, canvas.width, canvas.height);
 }
 
 function loop() {
   Dvinci();
-  mover();
-  coliciones()
-  salirCamiones();
+  loopPersonajes();
+  console.log(p1)
+  console.log(p2)
+
 }
 
 setInterval(loop, 10);

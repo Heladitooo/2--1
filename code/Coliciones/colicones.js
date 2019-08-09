@@ -15,11 +15,7 @@ function coliciones()
     console.log("Colicion!!!!")
   }
 
-  if( movXp1>= camionPosXX &&  movXp1  + 20 <= camionPosXX + camionY.ancho && movYp1  >=  camionPosYX && movYp1 + 20 <= camionPosYX + camionY.alto)
-  {
-    debugger
-    console.log("Colicion!!!!")
-  }
+  
 
 
 }

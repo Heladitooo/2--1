@@ -4,17 +4,66 @@
   <link rel="stylesheet" href="Style/style.css">
 </head>
 <body width="100%">
+
+  <div class="camion1"></div>
+  <div class="camion2"></div>
+
+<section class="menu">
+  <img src="images/logo.png" alt="logo" class="imgMenu">
+
+<div class="Opciones">
+
+  <h1 class="empezar" id="HoraDeJugar">Jugar!</h1>
+
+  <div class="jugadores">
+    <h2 id="seleccionarJugador1"> < </h2>
+    <h2 id="jugadorTexto">1 jugador</h2>
+    <h2 id="seleccionarJugador2"> > </h2>
+  </div>
+
+  <h2 id="Instrucciones">Instrucciones</h2>
+</div>
+
+  <a href="https://github.com/Heladitooo/2--1/tree/master" class="aG" target="_blanck">
+    <img src="https://image.flaticon.com/icons/svg/25/25231.svg" alt="gitHub" class="gitHubMenu" >
+  </a>
+
+</section>
+
+
+
+  <section class="hero">
+
 <canvas id="espacio" width="1360" height="600" style="background: gray"></canvas>
+
+
+<footer>
+  <h3>-Heladitooo</h3>
+  <img src="images/logo.png" alt="logo" class="imgFooter">
+  <h3>v0.2.0</h3>
+
+</footer>
+
+</section>
 
 <script type="text/javascript">
   var canvas = document.querySelector("#espacio");
   var lienzo = canvas.getContext("2d");
+  var empezar = false;
+
+
 </script>
+
+
+<script src="code/loop y demas/loopYD.js"></script>
 
 <script src="code/Personajes/Personajes.js"></script>
 <script src="code/Camiones/Camiones.js"></script>
-<script src="code/loop y demas/loopYD.js"></script>
 <script src="code/Coliciones/colicones.js"></script>
+<script type="text/javascript" src="code/Menu/menu.js"></script>
+
+
+
 
 
 </body>

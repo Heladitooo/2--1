@@ -1,6 +1,8 @@
 
+
+
 var p1 = {
-  posX: 30,
+  posX: 60,
   posY: 30,
   ancho: 20,
   alto: 20,
@@ -18,13 +20,14 @@ var p2 = {
   posY: 30,
   ancho: 20,
   alto: 20,
-  velocidad: 1,
+  velocidad: 10,
   arriva:38,
   abajo: 40,
   izquierda:37,
   derecha:39,
   color:"#7d4040",
-  colicion: false
+  colicion: false,
+  vasAjugar: false,
 }
 
 var teclasEstado = {};
@@ -82,7 +85,7 @@ function MovimientoP() {
 
 function loopPersonajes()
 {
-  if(p2.colicion === false)
+  if(p2.colicion === false && p2.vasAjugar === true)
   {
     moverPersonaje(p2);
   }
@@ -92,9 +95,9 @@ function loopPersonajes()
     moverPersonaje(p1);
   }
 
-  if(p2.colicion === true && p1.colicion === true)
+  if(p2.colicion === true && p1.colicion === true || p1.colicion === true && p2.vasAjugar === false)
   {
-    alert("gameOver")
+    alert("gameOver\nRecarga la pagina!")
   }
 }
 

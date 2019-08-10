@@ -9,7 +9,8 @@ var p1 = {
   abajo: 83,
   izquierda:65,
   derecha:68,
-  color:"#405d88"
+  color:"#405d88",
+  colicion: false
 }
 
 var p2 = {
@@ -17,22 +18,17 @@ var p2 = {
   posY: 30,
   ancho: 20,
   alto: 20,
-  velocidad: 10,
+  velocidad: 1,
   arriva:38,
   abajo: 40,
   izquierda:37,
   derecha:39,
-  color:"#7d4040"
+  color:"#7d4040",
+  colicion: false
 }
 
 var teclasEstado = {};
 
-function Dvinci() {
-  canvas.width = document.body.clientWidth;
-  canvas.height = document.body.clientHeight - 40;
-
-  lienzo.clearRect(0, 0, canvas.width, canvas.height);
-}
 
 function MovimientoP() {
   document.addEventListener("keydown", function(ev) {
@@ -45,11 +41,10 @@ function MovimientoP() {
 
  function moverPersonaje(player) {
 
-   function dP() {
-     lienzo.fillStyle = player.color;
-     lienzo.fillRect(player.posX,player.posY, player.ancho, player.alto);
-   }
-   dP();
+  if(player.colicion === false)
+  {
+  dibujar(player.posX,player.posY,player.ancho,player.alto,player.color);
+  }
 
   if (
     player.posX <= canvas.width - player.ancho &&
@@ -87,10 +82,20 @@ function MovimientoP() {
 
 function loopPersonajes()
 {
-  moverPersonaje(p2);
+  if(p2.colicion === false)
+  {
+    moverPersonaje(p2);
+  }
 
-  moverPersonaje(p1);
+  if(p1.colicion === false)
+  {
+    moverPersonaje(p1);
+  }
 
+  if(p2.colicion === true && p1.colicion === true)
+  {
+    alert("gameOver")
+  }
 }
 
 MovimientoP();

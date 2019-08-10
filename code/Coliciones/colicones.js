@@ -1,21 +1,21 @@
-function coliciones()
+function coliciones(a,b)
 {
-  //movXp1 = posicion en x del jugador 1
-  //movYp1 = posicion en y del jugador 1
 
-  //camionPosXY = posicion x de los camiones que van hacia arriva y abajo
-  //camionPosYY = posicion Y de los camiones que van hacia arriva y abajo
-
-  //camionPosXX = posicion x de los camiones que van hacia derecha y izquierda
-  //camionPosYX = posicion Y de los camiones que van hacia derecha y izquierda
-
-  if( movXp1  >= camionPosXY &&  movXp1 +  20 <= camionPosXY + camionY.ancho && movYp1  >=  camionPosYY && movYp1 + 20 <= camionPosYY + camionY.alto )
+  if( a.posX + a.ancho >= b.posX + 1 &&
+    a.posX <= b.posX + b.ancho - 1 &&
+    a.posY + a.alto >= b.posY + 1 &&
+    a.posY <= b.posY + b.alto - 1)
   {
-    debugger
-    console.log("Colicion!!!!")
+    a.colicion = true;
   }
 
-  
+}
 
+function colicionesCamiones()
+{
+  coliciones(p1,camionVertical)
+  coliciones(p1,camionHorizontal)
 
+  coliciones(p2,camionVertical)
+  coliciones(p2,camionHorizontal)
 }

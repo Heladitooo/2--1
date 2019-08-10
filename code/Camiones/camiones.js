@@ -1,1 +1,147 @@
 
+var camionHorizontal = {
+  posX: -canvas.width - 500,//ancho
+  posY: 300,
+  posDerecha: canvas.width + 500,//ancho
+  posIzquierda: -canvas.width - 500,//ancho
+  ancho: 500,
+  alto: 280,
+  velocidad: 10,
+  salirIzquierda: false,
+  salirDerecha: false,
+  color:"#5a5d62"
+}
+
+var camionVertical = {
+  posX: 100,
+  posY: canvas.height + 500,//alto
+  posArriva: canvas.height + 500,//alto
+  posAbajo: -canvas.height - 500,//alto
+  ancho: 280,
+  alto: 500,
+  velocidad: 10,
+  salirArriva: true,
+  salirAbajo: false,
+  color:"#5a5d62"
+}
+
+var numeroC = 0;
+
+function moverCamiones()
+{
+
+  function lolCamiones()
+  {
+    numeroC++;
+    camionVertical.posX = Math.ceil(Math.random() * canvas.width);
+    camionHorizontal.posY = Math.ceil(Math.random() * canvas.height);
+
+    var numeroAleatorio = Math.ceil(Math.random() * 4);
+
+    //Sube
+    if(numeroAleatorio === 1)
+    {
+      camionVertical.salirArriva = true;
+      camionVertical.salirAbajo = false;
+
+      camionHorizontal.salirDerecha = false;
+      camionHorizontal.salirIzquierda = false;
+
+      camionVertical.posY = camionVertical.posArriva;
+    }
+
+    //Baja
+    if(numeroAleatorio === 2)
+    {
+      camionVertical.salirArriva = false;
+      camionVertical.salirAbajo = true;
+
+      camionHorizontal.salirDerecha = false;
+      camionHorizontal.salirIzquierda = false;
+
+      camionVertical.posY = camionVertical.posAbajo;
+    }
+
+    //Avanza
+    if(numeroAleatorio === 3)
+    {
+      camionVertical.salirArriva = false;
+      camionVertical.salirAbajo = false;
+
+      camionHorizontal.salirDerecha = false;
+      camionHorizontal.salirIzquierda = true;
+
+      camionHorizontal.posX = camionHorizontal.posIzquierda;
+    }
+
+    //Retrocede
+    if(numeroAleatorio === 4)
+    {
+      camionVertical.salirArriva = false;
+      camionVertical.salirAbajo = false;
+
+      camionHorizontal.salirDerecha = true;
+      camionHorizontal.salirIzquierda = false;
+
+      camionHorizontal.posX = camionHorizontal.posDerecha;
+    }
+
+  }
+
+
+  //Sube
+  if(camionVertical.salirArriva === true)
+  {
+    if(camionVertical.posY > -canvas.height - camionVertical.alto)
+    {
+      camionVertical.posY -= camionVertical.velocidad;
+    } else {
+      lolCamiones()
+    }
+  }
+
+  //Baja
+  if(camionVertical.salirAbajo === true)
+  {
+    if(camionVertical.posY < canvas.height + camionVertical.alto)
+    {
+      camionVertical.posY += camionVertical.velocidad;
+    } else {
+      lolCamiones()
+    }
+  }
+
+  //Avanza
+  if(camionHorizontal.salirIzquierda === true)
+  {
+    if(camionHorizontal.posX < canvas.width + camionHorizontal.ancho)
+    {
+      camionHorizontal.posX += camionHorizontal.velocidad;
+    } else {
+      lolCamiones()
+    }
+  }
+
+    //Retrocede
+    if(camionHorizontal.salirDerecha === true)
+    {
+      if(camionHorizontal.posX > -canvas.width - camionHorizontal.ancho)
+      {
+        camionHorizontal.posX -= camionHorizontal.velocidad;
+      } else {
+        lolCamiones()
+      }
+    }
+
+
+  dibujar(camionVertical.posX,camionVertical.posY,camionVertical.ancho,camionVertical.alto,camionVertical.color)
+  dibujar(camionHorizontal.posX,camionHorizontal.posY,camionHorizontal.ancho,camionHorizontal.alto,camionHorizontal.color)
+
+  if(numeroC === 5)
+  {
+    numeroC = 0;
+    camionVertical.velocidad+=2;
+    camionHorizontal.velocidad+=2;
+  }
+
+}

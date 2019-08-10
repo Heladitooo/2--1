@@ -1,0 +1,36 @@
+#espacio
+{
+  width: 80vw;
+}
+footer
+{
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100vw;
+  justify-items: center;
+  align-items:  center;
+  color: #bfbfbf
+}
+
+.imgFooter
+{
+  max-width: 15%;
+}
+
+.puntaje
+{
+  display: grid;
+  justify-content: center;
+  justify-items: center;
+  width: 100vw;
+  height: 10vh;
+  font-size: 100%;
+  align-items: end;
+
+}
+
+.puntaje h2
+{
+  margin: 0;
+}

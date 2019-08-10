@@ -12,9 +12,9 @@ var p1 = {
   izquierda:65,
   derecha:68,
   color:"#405d88",
-  colicion: false
+  colicion: false,
+  puntaje: 0
 }
-
 var p2 = {
   posX: 30,
   posY: 30,
@@ -28,6 +28,7 @@ var p2 = {
   color:"#7d4040",
   colicion: false,
   vasAjugar: false,
+  puntaje: 0
 }
 
 var teclasEstado = {};

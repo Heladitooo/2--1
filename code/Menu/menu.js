@@ -39,5 +39,14 @@ play.addEventListener("click",function()
   camion1.style.display = "none";
   camion2.style.display = "none";
 
+  if(p2.vasAjugar === false)
+  {
+    Pn.style.gridTemplateColumns = "1fr";
+    Pp2.style.display = "none"
+  }else {
+    Pn.style.gridTemplateColumns = "repeat(2,1fr)";
+
+  }
+
 
 })

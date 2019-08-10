@@ -33,6 +33,17 @@ function moverCamiones()
   function lolCamiones()
   {
     numeroC++;
+    if(p1.colicion === false)
+    {
+
+      p1.puntaje++;
+      Pp1.innerHTML = p1.puntaje;
+    }
+    if(p2.colicion === false && p2.vasAjugar === true)
+    {
+      p2.puntaje++;
+      Pp2.innerHTML = p2.puntaje;
+    }
     camionVertical.posX = Math.ceil(Math.random() * canvas.width);
     camionHorizontal.posY = Math.ceil(Math.random() * canvas.height);
 

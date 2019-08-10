@@ -1,7 +1,9 @@
 <html>
 <head>
   <title>2-,1</title>
-  <link rel="stylesheet" href="Style/style.css">
+  <link rel="stylesheet" href="Style/Menu/style.css">
+  <link rel="stylesheet" href="Style/Canvas/Style.css">
+
 </head>
 <body width="100%">
 
@@ -33,7 +35,10 @@
 
 
   <section class="hero">
-
+    <div class="puntaje" id="puntaje">
+      <h2 id="Pp1"></h2>
+      <h2 id="Pp2"></h2>
+    </div>
 <canvas id="espacio" width="1360" height="600" style="background: gray"></canvas>
 
 
@@ -51,6 +56,10 @@
   var lienzo = canvas.getContext("2d");
   var empezar = false;
 
+  var Pp1 = document.querySelector("#Pp1");
+  var Pp2 = document.querySelector("#Pp2");
+
+  var Pn = document.querySelector("#puntaje");
 
 </script>
 

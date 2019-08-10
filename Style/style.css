@@ -1,0 +1,163 @@
+body
+{
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items:  center;
+  justify-content: center;
+  background: #2b2a2a;
+  font-family: "Roboto thin"
+}
+
+#espacio
+{
+  width: 80vw;
+}
+footer
+{
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  width: 100vw;
+  justify-items: center;
+  align-items:  center;
+  color: #bfbfbf
+}
+
+.imgFooter
+{
+  max-width: 15%;
+}
+
+.hero
+{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+}
+
+.menu
+{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  position: absolute;
+  z-index: 2;
+
+  background: #EEDB00;
+  grid-template-rows: 40% 30% 20%
+}
+
+.imgMenu
+{
+  max-width: 28%;
+}
+
+.gitHubMenu
+{
+  max-width: 100%;
+}
+
+.jugadores
+{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-items: center;
+}
+
+.empezar
+{
+  transition: 0.5s;
+}
+
+.empezar:hover
+{
+  transform: scale(1.2);
+}
+
+.aG
+{
+  width: 5%;
+}
+
+.Opciones
+{
+  display: grid;
+  justify-items: center;
+}
+
+.Opciones h1,h2
+{
+  cursor: pointer;
+  margin: 0;
+}
+
+.camion1
+{
+  width: 24%;
+  height: 86%;
+  background: #D1C109;
+  position: fixed;
+  z-index: 4;
+  left: 5%;
+  animation-name: camionArriva;
+  animation-iteration-count: infinite;
+  animation-duration: 7s;
+
+
+}
+
+@keyframes camionArriva {
+  0%
+  {
+    top: 186%;
+
+  }
+  50%
+  {
+    top: -180%;
+
+  }
+  100%
+  {
+    top: 186%;
+
+  }
+}
+
+.camion2
+{
+  width: 24%;
+  height: 86%;
+  background: #D1C109;
+  position: fixed;
+  z-index: 4;
+  left: 70%;
+  animation-name: camionAbajo;
+  animation-iteration-count: infinite;
+  animation-duration: 7s;
+}
+
+@keyframes camionAbajo {
+  0%
+  {
+    top: -186%;
+
+  }
+  50%
+  {
+    top: 180%;
+  }
+  100%
+  {
+    top: -186%;
+
+  }
+}

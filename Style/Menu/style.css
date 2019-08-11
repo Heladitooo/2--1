@@ -14,9 +14,17 @@ body
 }
 
 
+.menuContainer
+{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background: rgba(22, 22, 22, 0.72);
+  
+}
+
 .menu
 {
-  
   width: 100vw;
   height: 100vh;
   display: grid;

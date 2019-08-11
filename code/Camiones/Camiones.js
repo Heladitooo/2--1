@@ -55,45 +55,7 @@ function moverCamiones()
       perder = true;
       if(perder)
       {
-      ModalPerdiste.animate(
-        [
-          {
-            opacity: "0",
-            display: "grid",
-            top: 0
-          },
-          {
-            opacity: "1.0",
-            top: 0,
-          }
-        ],
-        {
-          duration: 1000,
-          iterations: 1,
-          fill: "forwards",
-          easing: 'ease-out'
-
-        }
-      )
-      ModalPuntaje.animate(
-        [
-          {
-            opacity: "0",
-            display: "grid",
-            top: '-90px'
-          },
-          {
-            opacity: "1.0",
-            top: '0'
-          }
-        ],
-        {
-          duration: 1000,
-          iterations: 1,
-          fill: "forwards",
-          easing: 'ease-out'
-
-        })
+        animacionEntradaOSalida(ModalPerdiste,ModalPuntaje,1)
       }
 
 

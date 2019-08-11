@@ -1,12 +1,15 @@
 
 var seleccionarJugador1 = document.querySelector("#seleccionarJugador1");
 var seleccionarJugador2 = document.querySelector("#seleccionarJugador2");
+var homeContainer = document.querySelector(".menuContainer");
 var home = document.querySelector(".menu");
 var camion1 = document.querySelector(".camion1");
 var camion2 = document.querySelector(".camion2");
 var instrucciones = document.querySelector("#Instrucciones");
 var play = document.querySelector("#HoraDeJugar");
 var jugadorTexto = document.querySelector("#jugadorTexto");
+
+animacionEntradaOSalida(homeContainer,home,1)
 
 instrucciones.addEventListener("click",function()
 {
@@ -31,7 +34,7 @@ play.addEventListener("click",function()
   empezar = true;
   console.log(empezar)
 
-  home.style.display = "none";
+  animacionEntradaOSalida(homeContainer,home,0)
   camion1.style.display = "none";
   camion2.style.display = "none";
 

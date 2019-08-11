@@ -76,11 +76,32 @@ footer
 }
 .hero
 {
-  position: relative;
   display: grid;
   justify-content: center;
   align-content: center;
 
   justify-items: center;
   align-items: center;
+}
+
+#VolverAempezar
+{
+    background: white;
+    width: 153%;
+    height: 155%;
+    border-radius: 8px;
+    border: 2px solid #b1b1b1;
+    transition: 0.5s;
+    outline: none;
+}
+
+#VolverAempezar:hover
+{
+  transform: scale(1.1);
+}
+
+#VolverAempezar:active
+{
+  transition: 0.2;
+  transform: scale(1.0);
 }

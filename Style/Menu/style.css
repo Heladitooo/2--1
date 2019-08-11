@@ -6,23 +6,17 @@ body
   display: grid;
   justify-items: center;
   align-items:  center;
+  align-content: center;
   justify-content: center;
   background: #2b2a2a;
-  font-family: "Roboto thin"
+  font-family: "Roboto thin";
+  overflow: hidden;
 }
 
-
-.hero
-{
-  display: grid;
-  justify-content: center;
-  align-content: center;
-  justify-items: center;
-  align-items: center;
-}
 
 .menu
 {
+  
   width: 100vw;
   height: 100vh;
   display: grid;
@@ -46,12 +40,14 @@ body
   max-width: 100%;
 }
 
+
 .jugadores
 {
   display: grid;
   grid-template-columns: repeat(3,1fr);
   justify-items: center;
 }
+
 
 .empezar
 {
@@ -67,6 +63,7 @@ body
 {
   width: 5%;
 }
+
 
 .Opciones
 {

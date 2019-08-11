@@ -34,44 +34,61 @@
 
 
 
-  <section class="hero">
-    <div class="puntaje" id="puntaje">
-      <h2 id="Pp1" style="color: #405d88"></h2>
-      <h2 id="Pp2" style="color: #7d4040"></h2>
-    </div>
-<canvas id="espacio" width="1360" height="600" style="background: gray"></canvas>
 
+  <section class="hero">
+
+    <div class="puntaje" id="puntaje">
+      <h2 id="puntajeP1" style="color: #405d88"></h2>
+      <h2 id="puntajeP2" style="color: #7d4040"></h2>
+    </div>
+
+<canvas id="espacio" width="1360" height="600" style="background: gray"></canvas>
 
 <footer>
   <h3>-Heladitooo</h3>
   <img src="images/logo.png" alt="logo" class="imgFooter">
-  <h3>v1.1.0</h3>
+  <h3>v1.2.0</h3>
 
 </footer>
 
+<section class="ModalContainer">
+
+  <div class="ModalPerdiste">
+
+    <h1>O perdiste!</h1>
+      <h2 id="puntajeFinal" ></h2>
+    <button type="button" name="button" id="VolverAempezar">otra vez!</button>
+  </div>
+
 </section>
+</section>
+
 
 <script type="text/javascript">
   var canvas = document.querySelector("#espacio");
   var lienzo = canvas.getContext("2d");
   var empezar = false;
+  var perder = false;
 
-  var Pp1 = document.querySelector("#Pp1");
-  var Pp2 = document.querySelector("#Pp2");
+  var puntajeP1 = document.querySelector("#puntajeP1");
+  var puntajeP2 = document.querySelector("#puntajeP2");
+  var puntajeFinal = document.querySelector("#puntajeFinal");
 
-  var Pn = document.querySelector("#puntaje");
+  var VolverAempezar = document.querySelector("#VolverAempezar");
+
+  var puntajeContainer = document.querySelector("#puntaje");
+
+  var ModalPerdiste = document.querySelector(".ModalContainer");
+  var ModalPuntaje = document.querySelector(".ModalPerdiste");
+
 
 </script>
 
-
 <script src="code/loop y demas/loopYD.js"></script>
-
 <script src="code/Personajes/Personajes.js"></script>
 <script src="code/Camiones/Camiones.js"></script>
 <script src="code/Coliciones/colicones.js"></script>
 <script type="text/javascript" src="code/Menu/menu.js"></script>
-
-
 
 
 

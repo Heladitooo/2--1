@@ -11,7 +11,7 @@ function dibujar(x,y,w,h,color) {
 
 function loop()
 {
-  if(empezar == true)
+  if(empezar == true && perder === false)
   {
   Dvinci();
   loopPersonajes();

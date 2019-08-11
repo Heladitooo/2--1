@@ -96,10 +96,7 @@ function loopPersonajes()
     moverPersonaje(p1);
   }
 
-  if(p2.colicion === true && p1.colicion === true || p1.colicion === true && p2.vasAjugar === false)
-  {
-    alert("gameOver\nRecarga la pagina!")
-  }
+
 }
 
 MovimientoP();

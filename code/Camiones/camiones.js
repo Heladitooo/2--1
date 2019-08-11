@@ -32,18 +32,74 @@ function moverCamiones()
 
   function lolCamiones()
   {
+
+    //Sumar velocidad de camiones y sumar puntaje
     numeroC++;
     if(p1.colicion === false)
     {
 
       p1.puntaje++;
-      Pp1.innerHTML = p1.puntaje;
+      puntajeP1.innerHTML = p1.puntaje;
+      puntajeFinal.innerHTML = p1.puntaje;
     }
+
     if(p2.colicion === false && p2.vasAjugar === true)
     {
       p2.puntaje++;
-      Pp2.innerHTML = p2.puntaje;
+      puntajeP2.innerHTML = p2.puntaje;
+      puntajeFinal.innerHTML = `${p1.puntaje} - ${p2.puntaje}`;
     }
+
+    if(p2.colicion === true && p1.colicion === true || p1.colicion === true && p2.vasAjugar === false)
+    {
+      perder = true;
+      if(perder)
+      {
+      ModalPerdiste.animate(
+        [
+          {
+            opacity: "0",
+            display: "grid",
+            top: 0
+          },
+          {
+            opacity: "1.0",
+            top: 0,
+          }
+        ],
+        {
+          duration: 1000,
+          iterations: 1,
+          fill: "forwards",
+          easing: 'ease-out'
+
+        }
+      )
+      ModalPuntaje.animate(
+        [
+          {
+            opacity: "0",
+            display: "grid",
+            top: '-90px'
+          },
+          {
+            opacity: "1.0",
+            top: '0'
+          }
+        ],
+        {
+          duration: 1000,
+          iterations: 1,
+          fill: "forwards",
+          easing: 'ease-out'
+
+        })
+      }
+
+
+    }
+
+
     camionVertical.posX = Math.ceil(Math.random() * canvas.width);
     camionHorizontal.posY = Math.ceil(Math.random() * canvas.height);
 

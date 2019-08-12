@@ -32,5 +32,5 @@ function loop()
 
 ------------
 
-###  Gracias a Platzi 
+###  Gracias a Platzi https://platzi.com/
 ####  -online efective education-

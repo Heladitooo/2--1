@@ -55,9 +55,9 @@ footer
 {
   box-shadow: 8px 8px 15px rgba(32, 32, 32, 0.86);
   position: relative;
+  grid-gap: 6%;
   font-size: 169%;
   top: -50px;
-  border-radius: 10px;
   display: grid;
   justify-content: center;
   align-content: center;
@@ -66,8 +66,8 @@ footer
   align-items: center;
 
   background: #e2e2e2;
-  width: 38vw;
-  height: 65vh;
+  width: 100vw;
+  height: 45vh;
 }
 
 .ModalPerdiste h1

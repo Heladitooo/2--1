@@ -54,8 +54,9 @@ function animacionEntradaOSalida(container,objeto,sOe)
 
   if(sOe === 1)
   {
-    containerAnimate.play()
-    objetoAnimate.play()
+    containerAnimate.play();
+    objetoAnimate.play();
+    container.style.display = 'grid';
   }else {
     containerAnimate = container.animate(
      [
@@ -98,6 +99,9 @@ function animacionEntradaOSalida(container,objeto,sOe)
      })
     containerAnimate.play()
     objetoAnimate.play()
+    setTimeout(function(){
+      container.style.display = "none";
+    },1000)
   }
 }
 

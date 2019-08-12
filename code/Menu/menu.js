@@ -13,7 +13,12 @@ animacionEntradaOSalida(homeContainer,home,1)
 
 instrucciones.addEventListener("click",function()
 {
-  alert("Evita los camiones!  \np1: w,a,s,d\np2: arriva,abajo,izquierda,derecha\nJUEGO EN DESARROLLO! ya le agregaremos mas cosas")
+  animacionEntradaOSalida(ModalOpcionesContainer,ModalOpciones,1)
+})
+
+botonOpciones.addEventListener("click",function()
+{
+  animacionEntradaOSalida(ModalOpcionesContainer,ModalOpciones,0)
 })
 
 seleccionarJugador1.addEventListener("click",function()

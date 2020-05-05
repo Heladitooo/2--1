@@ -37,7 +37,6 @@ seleccionarJugador2.addEventListener("click",function()
 play.addEventListener("click",function()
 {
   empezar = true;
-  console.log(empezar)
 
   animacionEntradaOSalida(homeContainer,home,0)
   camion1.style.display = "none";

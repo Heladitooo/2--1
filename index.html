@@ -85,11 +85,13 @@
 
 
   //guardo en el localStorage los puntos maximos, y los imprimo :D
-  var puntosMaximos = 0;
+  
   if(localStorage.getItem("maximunPoints") != null){
+    var puntosMaximos = 0;
     puntosMaximos = localStorage.getItem("maximunPoints",puntosMaximos);
   } else {
-    localStorage.setItem("maximunPoints",puntosMaximos);
+    var puntosMaximos = 0;
+    puntosMaximos = localStorage.setItem("maximunPoints",puntosMaximos);
   }
 
   var puntosMaximosTEXTO = document.querySelector("#puntosMaximos");

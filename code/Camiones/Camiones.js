@@ -37,7 +37,6 @@ function moverCamiones()
     numeroC++;
     if(p1.colicion === false)
     {
-
       p1.puntaje++;
       puntajeP1.innerHTML = p1.puntaje;
       puntajeFinal.innerHTML = p1.puntaje;
@@ -48,7 +47,6 @@ function moverCamiones()
         localStorage.setItem("maximunPoints",puntosMaximos);
         puntosMaximosTEXTO.innerHTML = "puntaje maximo: " + puntosMaximos;
       }
-      console.log(puntosMaximos);
     }
 
     if(p2.colicion === false && p2.vasAjugar === true)

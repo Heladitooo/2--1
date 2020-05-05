@@ -57,7 +57,7 @@
 <footer>
   <h3>-Heladitooo</h3>
   <img src="images/logo.png" alt="logo" class="imgFooter">
-  <h3>v1.3.2</h3>
+  <h3>v1.3.3</h3>
 
 </footer>
 
@@ -89,7 +89,7 @@
     var puntosMaximos = localStorage.getItem("maximunPoints",puntosMaximos);
   } else {
     var puntosMaximos = 0;
-    puntosMaximos = localStorage.setItem("maximunPoints",puntosMaximos);
+    localStorage.setItem("maximunPoints",puntosMaximos);
   }
   var puntosMaximosTEXTO = document.querySelector("#puntosMaximos");
   puntosMaximosTEXTO.innerHTML = "puntaje maximo: " + puntosMaximos;

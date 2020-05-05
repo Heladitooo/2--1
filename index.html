@@ -95,7 +95,7 @@
   }
 
   var puntosMaximosTEXTO = document.querySelector("#puntosMaximos");
-  puntosMaximosTEXTO.innerHTML = "puntaje maximo: " + puntosMaximos;
+  puntosMaximosTEXTO.innerHTML = "puntaje maximo: " + localStorage.getItem("maximunPoints", puntosMaximos);
   
 
 

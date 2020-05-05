@@ -41,6 +41,14 @@ function moverCamiones()
       p1.puntaje++;
       puntajeP1.innerHTML = p1.puntaje;
       puntajeFinal.innerHTML = p1.puntaje;
+
+      //Si el puntaje es mayor a puntos maximos, empiezalo a guardar
+      if(p1.puntaje > puntosMaximos){
+        puntosMaximos = p1.puntaje;
+        localStorage.setItem("maximunPoints",puntosMaximos);
+        puntosMaximosTEXTO.innerHTML = "puntaje maximo: " + puntosMaximos;
+      }
+      console.log(puntosMaximos);
     }
 
     if(p2.colicion === false && p2.vasAjugar === true)

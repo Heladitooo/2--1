@@ -6,7 +6,7 @@
 
 </head>
 <body width="100%">
-
+  <div class="puntosMaximos" id="puntosMaximos">Puntaje maximo</div>
   <div class="camion1"></div>
   <div class="camion2"></div>
 
@@ -45,10 +45,6 @@
 
 </section>
 
-
-
-
-
   <section class="hero">
 
     <div class="puntaje" id="puntaje">
@@ -61,7 +57,7 @@
 <footer>
   <h3>-Heladitooo</h3>
   <img src="images/logo.png" alt="logo" class="imgFooter">
-  <h3>v1.3.1</h3>
+  <h3>v1.3.2</h3>
 
 </footer>
 
@@ -80,6 +76,26 @@
 
 
 <script type="text/javascript">
+
+  if(localStorage != "undefined"){
+    console.log("localStorage OK")
+  }else {
+    alert("Si quieres guardar puntos necesitas activar el localStorage")
+  }
+
+
+  //guardo en el localStorage los puntos maximos, y los imprimo :D
+  if(localStorage.getItem("maximunPoints") != null){
+    var puntosMaximos = localStorage.getItem("maximunPoints",puntosMaximos);
+  } else {
+    var puntosMaximos = 0;
+    puntosMaximos = localStorage.setItem("maximunPoints",puntosMaximos);
+  }
+  var puntosMaximosTEXTO = document.querySelector("#puntosMaximos");
+  puntosMaximosTEXTO.innerHTML = "puntaje maximo: " + puntosMaximos;
+  
+
+
   var canvas = document.querySelector("#espacio");
   var lienzo = canvas.getContext("2d");
   var empezar = false;
@@ -88,7 +104,7 @@
   var puntajeP1 = document.querySelector("#puntajeP1");
   var puntajeP2 = document.querySelector("#puntajeP2");
   var puntajeFinal = document.querySelector("#puntajeFinal");
-
+  
   var VolverAempezar = document.querySelector("#VolverAempezar");
 
   var puntajeContainer = document.querySelector("#puntaje");
@@ -99,9 +115,6 @@
   var ModalOpcionesContainer = document.querySelector(".opcionesContainer");
   var ModalOpciones = document.querySelector(".OpcionesLol");
   var botonOpciones = document.querySelector("#botonOpciones");
-
-
-
 
 </script>
 

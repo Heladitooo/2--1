@@ -1,13 +1,10 @@
-
-
-
 var p1 = {
   posX: 60,
   posY: 30,
   ancho: 20,
   alto: 20,
   velocidad: 10,
-  arriva:87,
+  arriba:87,
   abajo: 83,
   izquierda:65,
   derecha:68,
@@ -21,7 +18,7 @@ var p2 = {
   ancho: 20,
   alto: 20,
   velocidad: 10,
-  arriva:38,
+  arriba:38,
   abajo: 40,
   izquierda:37,
   derecha:39,
@@ -56,7 +53,7 @@ function MovimientoP() {
     player.posX >= 0 + player.ancho/2 &&
     player.posY >= 0 + player.alto/2
   ) {
-    if (teclasEstado[player.arriva]) {
+    if (teclasEstado[player.arriba]) {
       player.posY -= player.velocidad;
     }
     if (teclasEstado[player.izquierda]) {

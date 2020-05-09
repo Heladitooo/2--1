@@ -57,7 +57,7 @@
 <footer>
   <h3>-Heladitooo</h3>
   <img src="images/logo.png" alt="logo" class="imgFooter">
-  <h3>v1.3.3</h3>
+  <h3>v1.4.0</h3>
 
 </footer>
 
@@ -86,19 +86,15 @@
 
   //guardo en el localStorage los puntos maximos, y los imprimo :D
   
-  if(localStorage.getItem("maximunPoints") != null){
-    var puntosMaximos = 0;
-    puntosMaximos = localStorage.getItem("maximunPoints",puntosMaximos);
+  if(localStorage.getItem("maximunPoints") != null){   
+    var puntosMaximos = localStorage.getItem("maximunPoints",puntosMaximos);
   } else {
     var puntosMaximos = 0;
-    puntosMaximos = localStorage.setItem("maximunPoints",puntosMaximos);
+    localStorage.setItem("maximunPoints",puntosMaximos);
   }
-
-  var puntosMaximosTEXTO = document.querySelector("#puntosMaximos");
-  puntosMaximosTEXTO.innerHTML = "puntaje maximo: " + localStorage.getItem("maximunPoints", puntosMaximos);
   
-
-
+  document.querySelector("#puntosMaximos").innerHTML = "puntaje maximo: " + localStorage.getItem("maximunPoints", puntosMaximos);
+  
   var canvas = document.querySelector("#espacio");
   var lienzo = canvas.getContext("2d");
   var empezar = false;

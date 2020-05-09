@@ -1,4 +1,3 @@
-
 var camionHorizontal = {
   posX: -canvas.width - 500,//ancho
   posY: 300,
@@ -15,12 +14,12 @@ var camionHorizontal = {
 var camionVertical = {
   posX: 100,
   posY: canvas.height + 500,//alto
-  posArriva: canvas.height + 500,//alto
+  posArriba: canvas.height + 500,//alto
   posAbajo: -canvas.height - 500,//alto
   ancho: 280,
   alto: 500,
   velocidad: 10,
-  salirArriva: true,
+  salirArriba: true,
   salirAbajo: false,
   color:"#5a5d62"
 }
@@ -41,11 +40,10 @@ function moverCamiones()
       puntajeP1.innerHTML = p1.puntaje;
       puntajeFinal.innerHTML = p1.puntaje;
 
-      //Si el puntaje es mayor a puntos maximos, empiezalo a guardar
+      //Si el puntaje es mayor a puntos maximos
       if(p1.puntaje > puntosMaximos){
         puntosMaximos = p1.puntaje;
-        localStorage.setItem("maximunPoints",puntosMaximos);
-        puntosMaximosTEXTO.innerHTML = "puntaje maximo: " + puntosMaximos;
+        document.querySelector("#puntosMaximos").innerHTML = "puntaje maximo: " + puntosMaximos;
       }
     }
 
@@ -58,37 +56,42 @@ function moverCamiones()
 
     if(p2.colicion === true && p1.colicion === true || p1.colicion === true && p2.vasAjugar === false)
     {
+      //Si pierdes, aparece el modal y se guarda en localStorage
       perder = true;
       if(perder)
       {
+        localStorage.setItem("maximunPoints",puntosMaximos);
         animacionEntradaOSalida(ModalPerdiste,ModalPuntaje,1)
       }
 
 
     }
 
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min)) + min;
+    }   
 
-    camionVertical.posX = Math.ceil(Math.random() * canvas.width);
-    camionHorizontal.posY = Math.ceil(Math.random() * canvas.height);
+    camionVertical.posX = Math.floor(Math.random() * canvas.width - 10 );
+    camionHorizontal.posY = Math.floor(Math.random() * canvas.height - 10);
 
-    var numeroAleatorio = Math.ceil(Math.random() * 4);
+    var numeroAleatorio = getRandomInt(1, 4);
 
     //Sube
     if(numeroAleatorio === 1)
     {
-      camionVertical.salirArriva = true;
+      camionVertical.salirArriba = true;
       camionVertical.salirAbajo = false;
 
       camionHorizontal.salirDerecha = false;
       camionHorizontal.salirIzquierda = false;
 
-      camionVertical.posY = camionVertical.posArriva;
+      camionVertical.posY = camionVertical.posArriba;
     }
 
     //Baja
     if(numeroAleatorio === 2)
     {
-      camionVertical.salirArriva = false;
+      camionVertical.salirArriba = false;
       camionVertical.salirAbajo = true;
 
       camionHorizontal.salirDerecha = false;
@@ -100,7 +103,7 @@ function moverCamiones()
     //Avanza
     if(numeroAleatorio === 3)
     {
-      camionVertical.salirArriva = false;
+      camionVertical.salirArriba = false;
       camionVertical.salirAbajo = false;
 
       camionHorizontal.salirDerecha = false;
@@ -112,7 +115,7 @@ function moverCamiones()
     //Retrocede
     if(numeroAleatorio === 4)
     {
-      camionVertical.salirArriva = false;
+      camionVertical.salirArriba = false;
       camionVertical.salirAbajo = false;
 
       camionHorizontal.salirDerecha = true;
@@ -125,7 +128,7 @@ function moverCamiones()
 
 
   //Sube
-  if(camionVertical.salirArriva === true)
+  if(camionVertical.salirArriba === true)
   {
     if(camionVertical.posY > -canvas.height - camionVertical.alto)
     {
